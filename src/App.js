@@ -7,6 +7,7 @@ function App() {
     const [email, setEmail] = useState('');
     function handleChange(event) {
         setEmail(event.target.value);}
+    function showAlert(){alert(email);}
     let message;
     if (email.length < 10) {
         message = <div>Ale masz krótki adres!</div>;
@@ -21,6 +22,7 @@ function App() {
           <h2>Twój e-mail to {email}</h2>
           {message}
           <input type="text" value={email} onChange={handleChange}/>
+          <button onClick={showAlert}>Wyślij e-mail w alercie </button>
       </div>
   );
     }
